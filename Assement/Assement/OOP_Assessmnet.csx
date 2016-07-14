@@ -65,22 +65,31 @@
 using System;
 class Customer
 {
-    public enum genderEnum { Unknown=0, Male, Female };
+    public enum genderEnum { Unknown = 0, Male, Female };
     public string name;
     public genderEnum gender;
     public string purchase;
 
 
-// Task 2
+    // Task 2
 
-public Customer(string name, genderEnum gender, string purchase)
-{
-    Name = name;
-    Gender = gender;
-    Purchase = purchase;
-}
+    public Customer(string name, genderEnum gender, string purchase)
+    {
+        Name = name;
+        Gender = gender;
+        Purchase = purchase;
+    }
 
-public string Name { get; set; }
-public genderEnum Gender { get; set; }
-public string Purchase { get; set; }
+    public string Name { get; set; }
+    public genderEnum Gender { get; set; }
+    public string Purchase { get; set; }
+
+    // Task 3
+    public string sendThankYou(string name, string purchase)
+    {
+        String message = ($"Thank you {name} for purchasing {purchase}.");
+        return message;
+    }
+    string msg1 = sendThankYou({"Betty"}, { "Flowers"});
+    Console.WriteLine(msg1);
 }
