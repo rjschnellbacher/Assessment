@@ -60,3 +60,13 @@
 //months inactive, and reason for inactivity.For example:
 ///Michael - desk - Male - 4 - Moved
 ///========================================
+
+using System;
+
+public class Customer
+{
+    public string name, 
+    public string gender,
+    public purchase
+
+}
