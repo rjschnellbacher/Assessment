@@ -61,12 +61,26 @@
 ///Michael - desk - Male - 4 - Moved
 ///========================================
 
+// Task 1
 using System;
-
-public class Customer
+class Customer
 {
-    public string name, 
-    public string gender,
-    public purchase
+    public enum genderEnum { Unknown=0, Male, Female };
+    public string name;
+    public genderEnum gender;
+    public string purchase;
 
+
+// Task 2
+
+public Customer(string name, genderEnum gender, string purchase)
+{
+    Name = name;
+    Gender = gender;
+    Purchase = purchase;
+}
+
+public string Name { get; set; }
+public genderEnum Gender { get; set; }
+public string Purchase { get; set; }
 }
