@@ -14,18 +14,31 @@
 // Part 1: Tasks 1,2,3
 using System;
 
- int     shootings = 35;
- bool    neverTrump = true;
- string  slogan1 = "Cleveland Rocks for Drew Carey";
- string  slogan2 = "Bernie Supporters are each worth";
- double  protestPeople = 456789;
- decimal bworth = 27.39m;
+int shootings = 35;
+bool neverTrump = true;
+string slogan1 = "Cleveland Rocks for Drew Carey";
+string slogan2 = "Bernie Supporters are each worth";
+double protestPeople = 456789;
+decimal bworth = 27.39m;
 
 string convNews
-    (string slogan, decimal value) {
+    (string slogan, decimal value)
+{
     var news2 = slogan2 + " " + bworth;
     return news2;
 }
 
 var blurb = convNews(slogan2, bworth);
 Console.WriteLine(blurb);
+
+
+// Part 1: Tasks 4,5 
+string[] family =
+{
+    "Emily","Mary","Sarah","Lisa"
+};
+
+foreach (string person in family)
+{
+    Console.WriteLine(person);
+}
