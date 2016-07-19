@@ -25,7 +25,7 @@
 ///Hello Dave, We wanted to let you know there's a sale on Apple iPhones
 ///coming up on 4/1/2016.
 
-//5.Create a subclass of Customer called InactiveCutomer.The class should 
+//5.Create a subclass of Customer called InactiveCustomer.The class should 
 //have an int property called MonthsInactive, and other programmers SHOULD
 //NOT be able to create subclasses from it. (hint: Sealed Modifier)
 
@@ -43,7 +43,7 @@
 //8.You should, of course, create instances of these classes, set the 
 //properties via the constructors, and test the methods on those objects.
 
-//9.Add an overridable method to the Customer class called 
+//9.Add an overidable method to the Customer class called 
 //PrintCustomerInfo. (hint: Virtual Modifier) The method should print the
 //name purchase, and gender of the customer.It could go like this:
 ///Paul - Fender Jazz Bass Guitar - Male.
@@ -61,35 +61,30 @@
 ///Michael - desk - Male - 4 - Moved
 ///========================================
 
-// Task 1
+// Task 1 Class
 using System;
+public enum gender { Unknown = 0, Male, Female };
+
 class Customer
 {
-    public enum genderEnum { Unknown = 0, Male, Female };
-    public string name;
-    public genderEnum gender;
-    public string purchase;
-
-
-    // Task 2
-
-    public Customer(string name, genderEnum gender, string purchase)
+    // Task 2 Constructor with parameters
+    public Customer(string name, gender gender, string purchase)
     {
         Name = name;
         Gender = gender;
         Purchase = purchase;
-    }
-
+     }
+    // Basic getter and setter methods
     public string Name { get; set; }
-    public genderEnum Gender { get; set; }
+    public gender Gender { get; set; }
     public string Purchase { get; set; }
 
-    // Task 3
-    public string sendThankYou(string name, string purchase)
-    {
-        String message = ($"Thank you {name} for purchasing {purchase}.");
-        return message;
-    }
-    string msg1 = sendThankYou({"Betty"}, { "Flowers"});
-    Console.WriteLine(msg1);
+    // Task 3 ThankYou Method
+    public string sendThankYou() =>
+        $"Thank you {Name} for purchasing {Purchase}.";
 }
+
+var c = new Customer("Donald", Customer.Gender.Male, "Art of Deal Book");
+var tyMsg = c.sendThankYou;
+Console.WriteLine(tyMsg);
+   
