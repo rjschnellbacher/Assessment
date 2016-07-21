@@ -63,12 +63,12 @@
 
 // Task 1 Class
 using System;
-public enum gender { Unknown = 0, Male, Female };
+public enum Gender { Unknown = 0, Male, Female };
 
 class Customer
 {
     // Task 2 Constructor with parameters
-    public Customer(string name, gender gender, string purchase)
+    public Customer(string name, Gender gender, string purchase)
     {
         Name = name;
         Gender = gender;
@@ -76,15 +76,54 @@ class Customer
      }
     // Basic getter and setter methods
     public string Name { get; set; }
-    public gender Gender { get; set; }
+    public Gender Gender { get; set; }
     public string Purchase { get; set; }
 
     // Task 3 ThankYou Method
-    public string sendThankYou() =>
-        $"Thank you {Name} for purchasing {Purchase}.";
-}
+    public void sendThankYou()
+    {
+        Console.WriteLine($"Thank you {Name} for purchasing {Purchase}.");
+    }
+    //// Task 4 Two Methods
+    public void sendSalesNotice(DateTime date)
+    {
+        Console.WriteLine($"Hello {Name}, We wanted to let you know there's a sale coming up on
+       { DateTime.UtcNow:0 }");
+    }
+    public void sendSalesNotice(DateTime date, string product)
+    {
+        Console.WriteLine($"Hello {Name}, We wanted to let you know there's a sale on {product} coming up on");
+       { DateTime.UtcNow:0 }");
+    }
+    
+        // Task 9 TODO: Create an overidable method of the Customer class
+        // called PrintCustomerInfo. 
 
-var c = new Customer("Donald", Customer.Gender.Male, "Art of Deal Book");
-var tyMsg = c.sendThankYou;
-Console.WriteLine(tyMsg);
+    }
+
+    var c = new Customer("Donald", Gender.Male, "Art of Deal Book");
+c.sendThankYou();
+
+var d = new Customer("Melenia", Gender.Female, "Designer Dress");
+c.sendSalesNotice(DateTime.Now);
+c.sendSalesNotice(DateTime.Now, "Red Hats");
+
+
+// Task 5 Subclass of Customer
+//5.Create a subclass of Customer called InactiveCustomer.The class should
+//have an int property called MonthsInactive, and other programmers SHOULD
+//NOT be able to create subclasses from it. (hint: Sealed Modifier)
+
+
+////sealed class InactiveCustomer : Customer;
+//    {
+//    MonthsInactive
+// Task 6 TODO: Constructor needed
+// Task 7 TODO: Message message needed 
+// Task 8 TODO: Create instances of InactiveCustomer Class to test.
+// Task 10 TODO: Create enums for Inactive Customer 
+//}
+
+
+
    
